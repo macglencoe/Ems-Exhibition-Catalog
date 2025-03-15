@@ -84,8 +84,26 @@ export default async function ExhibitionList() {
           </nav>
 
         </header>
+        <section style={{
+          flexDirection: "row",
+        }}>
+          <nav className={styles.toc}>
+            <h2>Table of Contents</h2>
+            <ol>
+              {items.map((item, index) => (
+                <li key={index}>
+                  <a href={`#${item.slug}`}>{item.title}</a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+          <div>
+            <h1>Some big words</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </section>
         {items.map(item => (
-          <section key={item.slug}>
+          <section key={item.slug} id={item.slug}>
             <div className={styles.image}>
               <figure>
                 {item.image && <img src={item.image} alt={item.slug} width={200} />}
