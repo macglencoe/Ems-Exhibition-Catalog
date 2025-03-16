@@ -158,12 +158,27 @@
 
 
 
+.hero {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero span {
+  text-align: right;
+}
+
 .toc {
   display: flex;
   flex-direction: column;
   gap: 1em;
   width: fit-content;
   min-width: max-content;
+  margin: 0 1em 1em 0;
 }
 
 .toc ol {
@@ -308,6 +323,26 @@ section:nth-child(even) .image img {
   .catalog > section {
     padding: 1em;
   }
+  .footer svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+  }
+  .footer {
+    position: relative;
+    gap: 0;
+  }
+  .footer *:not(svg) {
+    z-index: 1;
+  }
+  .toc {
+    float: left;
+  }
+  .hero {
+    display: table;
+  }
+
 }
 
 @media (prefers-color-scheme: dark) {
