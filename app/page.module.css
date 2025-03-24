@@ -37,12 +37,17 @@
   gap: 1em;
   align-items: center;
   padding: 0.2em;
+
+  height: min-content;
+  align-self: center;
 }
 
 .twoColumn {
   grid-column: span 2;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
+
+
 
 .catalog {
   position:absolute;
@@ -278,12 +283,10 @@
   line-height: 1.7em;
   font-size: 15px;
   white-space: pre-wrap;
-  border-left: var(--background-1) 3px solid;
   background-color: var(--background-2);
-  background-image: radial-gradient(at bottom right, var(--foreground-2) -200%, transparent);
-  margin-right: 1em;
-  margin-left: -2.1em;
   padding: 1em;
+  margin: 0 1em;
+  align-self: flex-start;
 }
 .catalog .description p {
   padding-left: 0.5em;
@@ -320,8 +323,13 @@ section .image {
   height: 100%;
   display: grid;
   grid-template-rows: 1fr 1fr;
-
 }
+
+.twoColumn figure {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
 
 .gridCell figcaption {
   display: flex;
@@ -329,7 +337,13 @@ section .image {
   gap: 0.5em;
   padding: 0.7em;
   margin: 0.3em;
-  border-top: 3px solid var(--foreground-1);
+  border-top: 3px solid var(--foreground-2);
+  align-self: flex-end;
+}
+
+.twoColumn figcaption {
+  border-top: none;
+  border-left: 3px solid var(--foreground-2);
 }
 
 .gridCell figcaption b {
