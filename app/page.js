@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 
 import fs from 'fs';
 import path from 'path';
+import { Fragment } from "react";
 
 
 export default async function ExhibitionList() {
@@ -62,7 +63,7 @@ export default async function ExhibitionList() {
     return { slug: folder, image: imgPath, description, title, creator, imageCaption, birthDeath, circa, tombstone };
   });
 
-  const EmmaEmail = "me@example.com";
+  const EmmaEmail = "emma.cote@aauni.edu";
 
   return (
     <>
@@ -95,31 +96,34 @@ export default async function ExhibitionList() {
               ))}
             </ol>
           </nav>
-            <span>
-              <h1>Some big words</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </span>
+          <span>
+            <h1>Some big words</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </span>
         </div>
-        {items.map(item => (
-          <section key={item.slug} id={item.slug}>
-            <div className={styles.image}>
+        <div className={styles.grid}>
+          {items.map(item => (
+            <div key={item.slug} className={styles.gridCell + " " + (
+              item.description ? styles.twoColumn : ''
+            )} >
               <figure>
-                {item.image && <img src={item.image} alt={item.slug} width={200} />}
+                {item.image && <a href={item.image}><img src={item.image} alt={item.slug} /></a>}
                 {item.imageCaption && <figcaption>{item.imageCaption}</figcaption>}
+                <figcaption>
+                  <h2>{item.creator}</h2>
+                  {item.birthDeath && <span>{item.birthDeath}</span>}
+                  <span><b>{item.title}</b>{
+                    item.circa && <span>, c. {item.circa}</span>
+                  }</span>
+                  {item.tombstone && <span className={styles.tombstone}>{item.tombstone}</span>}
+                </figcaption>
               </figure>
+              { item.description && <div className={styles.description}>
+                <p>{item.description}</p>
+              </div>}
             </div>
-            <div className={styles.info}>
-              <h2>{item.creator}</h2>
-              {item.birthDeath && <span>{item.birthDeath}</span>}
-
-              <span><b>{item.title}</b>{
-                item.circa && <span>, c. {item.circa}</span>
-              }</span>
-              {item.tombstone && <span className={styles.tombstone}>{item.tombstone}</span>}
-              <p className={styles.description}>{item.description}</p>
-            </div>
-          </section>
-        ))}
+          ))}
+        </div>
         <footer className={styles.footer}>
           <div>
             <b>Emma</b>
