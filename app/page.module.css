@@ -1,35 +1,74 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+.sidescroller {
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+.catalogNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
+.catalogNav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+}
+
+.catalogNav button {
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--background-2);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.catalogNav li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.catalogNav li:not(:first-child)::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: var(--background-2);
+}
+
+
+.catalogNav button.navButtonActive {
+  background-color: var(--foreground-2);
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.sidescrollerTable {
+  display: table;
+
+}
+
+.sidescrollerTable tr {
+  display: flex;
+}
+.sidescrollerTable td {
+  width: 400px;
+}
+
+.sidescrollerTable td:first-child {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .gridCell {
@@ -50,8 +89,10 @@
 
 
 .catalog {
-  position:absolute;
+  overflow-x: hidden;
 }
+
+
 
 .curatorEmail {
   display: flex;
@@ -126,7 +167,7 @@
   color: var(--foreground-1);
 }
 
-.header nav {
+.header nav.links {
   display: flex;
   flex-direction: row;
   gap: 0.2em;
@@ -180,24 +221,76 @@
   padding-left: 0.5em;
 }
 
+.instruction {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 1em;
+  width: 100%;
+}
+
+.instruction svg:first-child {
+  fill: var(--foreground-1);
+  height: 50px;
+  width: 50px;
+  filter: drop-shadow(0px 0px 50px var(--foreground-1));
+}
+.instruction svg:last-child {
+  fill: var(--foreground-2);
+  filter: drop-shadow(0px 0px 50px var(--foreground-2));
+  animation: moveLeftRight 2s infinite alternate;
+}
+
+@keyframes moveLeftRight {
+  0%, 80% {
+    translate: 0 0;
+  }
+  90% {
+    translate: -4px 0;
+  }
+  100% {
+    translate: 10px 0;
+  }
+}
 
 
 .hero {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1em;
   margin-bottom: 1em;
-  padding: 1em;
+  padding: 2em;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 
-.hero span {
-  text-align: right;
+.hero p {
+  line-height: 1.7em;
 }
-.hero span p {
-  line-height: 1.5em;
+
+.hero .cta {
+  display: flex;
+  flex-direction: row;
 }
+
+.hero .cta button {
+  margin: 1em;
+  padding: 1em;
+  background-color: var(--foreground-2);
+  border: none;
+  color: var(--background-1);
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: translate 0.2s ease-in-out;
+}
+.hero .cta button:nth-child(2) {
+  background-color: var(--background-2);
+  color: var(--foreground-1);
+}
+
+
 
 .toc {
   display: flex;
@@ -338,7 +431,6 @@ section .image {
   padding: 0.7em;
   margin: 0.3em;
   border-top: 3px solid var(--foreground-2);
-  align-self: flex-end;
 }
 
 .twoColumn figcaption {
