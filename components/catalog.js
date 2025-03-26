@@ -11,6 +11,13 @@ export const Catalog = (props) => {
   // currentItem is a NUMBER!!
   const [currentItem, setCurrentItem] = useState(0);
 
+  const currentElement = useRef(null);
+
+  // set currentElement to first element
+  useEffect(() => {
+    currentElement.current = document.getElementById(sectionItems[0].slug);
+  }, []);
+
   const sections = [
     {
       title: 'Hero',
@@ -35,37 +42,128 @@ export const Catalog = (props) => {
     return acc.concat(section.items);
   }, []);
 
-  console.log(sectionItems);
-  console.log(sections);
+  // Scroll Snapping
+
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const handleSnap = () => {
+      const snappedElement = getSnappedElement();
+      currentElement.current = snappedElement;
+      if (snappedElement) {
+        const id = snappedElement.id;
+        const index = sectionItems.findIndex(item => item.slug === id);
+        setCurrentItem(index);
+      }
+    }
+
+    const scrollContainer = scrollRef.current;
+
+    scrollContainer.addEventListener('scroll', handleSnap);
+
+    return () => {
+      scrollContainer.removeEventListener('scroll', handleSnap);
+    }
+  })
+
+  const getSnappedElement = () => {
+    const scrollContainer = scrollRef.current;
+
+    const scrollLeft = scrollContainer.scrollLeft;
+    const screenWidth = window.innerWidth;
+
+    const centerScreen = scrollLeft + screenWidth / 2;
+
+
+    const tableCells = scrollContainer.querySelectorAll('td');
+
+    let closestCell = null;
+    let minDistance = Infinity;
+
+    tableCells.forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      const elementLeft = rect.left + scrollLeft;
+      const distance = Math.abs(elementLeft + rect.width / 2 - centerScreen);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestCell = element;
+      }
+    });
+
+
+
+
+    return closestCell;
+  }
+
+
+
+  // Desktop scrolling
+
 
 
   const handleScroll = (e) => {
     if (e.deltaY > 0) {
-      setCurrentItem(prevItem => (prevItem + 1) % sectionItems.length);
+      /* setCurrentItem(prevItem => (prevItem + 1) % sectionItems.length); */
+      /* scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' }); */
+      const nextElement = currentElement.current.nextElementSibling;
+      if (nextElement) {
+        const scrollContainer = scrollRef.current;
+        const containerWidth = scrollContainer.clientWidth;
+        const targetOffsetLeft = nextElement.offsetLeft;
+        const targetWidth = nextElement.offsetWidth;
+        
+        const scrollToPosition = targetOffsetLeft - (containerWidth / 2) + (targetWidth / 2);
+        
+        scrollContainer.scrollTo({
+          left: scrollToPosition,
+          behavior: 'smooth'
+        });
+      }
+
+
     } else {
-      setCurrentItem(prevItem => (prevItem - 1 + sectionItems.length) % sectionItems.length);
+      const previousElement = currentElement.current.previousElementSibling;
+      if (previousElement) {
+        const scrollContainer = scrollRef.current;
+        const containerWidth = scrollContainer.clientWidth;
+        const targetOffsetLeft = previousElement.offsetLeft;
+        const targetWidth = previousElement.offsetWidth;
+        
+        const scrollToPosition = targetOffsetLeft - (containerWidth / 2) + (targetWidth / 2);
+        
+        scrollContainer.scrollTo({
+          left: scrollToPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   }
+
 
   useEffect(() => {
     window.addEventListener('wheel', handleScroll);
     return () => window.removeEventListener('wheel', handleScroll);
   }, []);
 
-  const scrollToItem = () => {
-    const item = document.getElementById(sectionItems[currentItem].slug);
+
+  const scrollToItem = (slug) => {
+    const item = document.getElementById(slug);
     if (item) {
-      item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center', scrollMode: 'x' });
     }
   }
+
+
 
   const prevItemRef = useRef(null);
 
   useEffect(() => {
-    if (prevItemRef.current !== currentItem) {
+    /* if (prevItemRef.current !== currentItem) {
       prevItemRef.current = currentItem;
     }
     scrollToItem(); //This might need to go up
+    console.log(currentItem); */
   }, [currentItem]);
 
 
@@ -90,26 +188,37 @@ export const Catalog = (props) => {
                     {!section.items.includes(sectionItems[currentItem]) && (
                       <button
                         className={styles.sectionNavButton}
-                        onClick={() => setCurrentItem(sectionItems.findIndex(item => item.slug === section.items[0].slug))}
+                        onClick={() => {
+                          setCurrentItem(sectionItems.findIndex(item => item.slug === section.items[0].slug))
+                          scrollToItem(section.items[0].slug);
+                        }
+                          
+                        }
                       ></button>
                     )}
 
                     <ul>
                       {
                         sectionItems.map((item, index) => {
-  
+
                           if (section.items.includes(item)) {
                             return (
                               <li className={styles.itemNav} key={index}>
                                 <button
                                   key={index}
-                                  onClick={() => setCurrentItem(sectionItems.findIndex(sectionItem => sectionItem.slug === item.slug))}
+                                  onClick={() => {
+                                    setCurrentItem(sectionItems.findIndex(sectionItem => sectionItem.slug === item.slug))
+
+                                    scrollToItem(item.slug);
+                                  }
+
+                                  }
                                   className={sectionItems[currentItem].slug === item.slug ? styles.navButtonActive : ""}
                                 ></button>
                               </li>
                             )
                           }
-  
+
                         })
                       }
                     </ul>
@@ -138,7 +247,7 @@ export const Catalog = (props) => {
 
         </header>
 
-        <div className={styles.sidescroller}>
+        <div className={styles.sidescroller} ref={scrollRef}>
           <table className={styles.sidescrollerTable}>
             <tbody>
               <tr>

@@ -2,6 +2,11 @@
 .sidescroller {
   overflow-x: scroll;
   overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+.sidescroller td {
+  scroll-snap-align: center;
 }
 
 
