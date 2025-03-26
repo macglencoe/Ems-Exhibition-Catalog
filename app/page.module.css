@@ -4,6 +4,35 @@
   overflow-y: hidden;
 }
 
+
+
+.catalogNav .sectionNav:not(:has(.navButtonActive)) {
+  background-color: transparent;
+  width: 30px;
+  height: 15px;
+  border-radius: 15px;
+
+}
+.catalogNav .sectionNav:not(:has(.navButtonActive)) li {
+  display: none;
+}
+
+.catalogNav .sectionNavButton {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  width: 50px;
+  height: 15px;
+  border: 2px solid var(--background-2);
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+.catalogNav .sectionNavButton:hover {
+  background-color: var(--background-2);
+}
+
+
 .catalogNav {
   display: flex;
   justify-content: center;
@@ -19,13 +48,17 @@
   list-style: none;
 }
 
-.catalogNav button {
+.catalogNav .itemNav button {
   background-color: transparent;
   width: 15px;
   height: 15px;
   border: 2px solid var(--background-2);
   border-radius: 50%;
   cursor: pointer;
+  z-index: 2;
+}
+.catalogNav .itemNav button:hover {
+  background-color: var(--background-2);
 }
 
 .catalogNav li {
@@ -34,7 +67,14 @@
   align-items: center;
 }
 
-.catalogNav li:not(:first-child)::before {
+.catalogNav li.itemNav::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: var(--background-2);
+}
+.catalogNav li.itemNav:last-child::after {
   content: '';
   display: block;
   width: 3px;
@@ -62,6 +102,7 @@
 }
 .sidescrollerTable td {
   width: 400px;
+  max-height: 90vh;
 }
 
 .sidescrollerTable td:first-child {
@@ -403,11 +444,24 @@ section .tombstone {
 }
 
 
+
 section .image {
   display: flex;
   flex-direction: row;
   flex: 1;
   width: 100%;
+}
+
+.categoryTitle {
+  display: flex;
+  text-align: right;
+  align-items: center;
+  justify-content: end;
+
+  border-left: 3px solid var(--foreground-1);
+
+  padding: 1em;
+  margin-bottom: 1em;
 }
 
 .gridCell figure {
@@ -416,6 +470,7 @@ section .image {
   height: 100%;
   display: grid;
   grid-template-rows: 1fr 1fr;
+  padding: 1em 0;
 }
 
 .twoColumn figure {
@@ -445,6 +500,8 @@ section .image {
 
 .gridCell img, .gridCell a {
   width: 100%;
+  max-height: 40vh;
+  object-fit: contain; /* this will enforce the maximum height without stretching or squishing the image */
   translate: -0.1em -0.1em;
   filter: drop-shadow(0 0 1em rgba(0, 0, 0, 0.5));
   align-self: flex-end;

@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../app/page.module.css";
 
 import ScrollHandler from "@/components/scrollHandler";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 
 export const Catalog = (props) => {
@@ -11,14 +11,39 @@ export const Catalog = (props) => {
   // currentItem is a NUMBER!!
   const [currentItem, setCurrentItem] = useState(0);
 
-  const sections = [{ slug: 'hero', title: 'Hero' }, ...props.items];
+  const sections = [
+    {
+      title: 'Hero',
+      slug: 'hero',
+      items: [{ title: 'Hero', type: 'sectionHeader', slug: 'hero' }]
+    },
+    ...props.items.map(section => {
+      return {
+        title: section.title,
+        slug: section.slug,
+        items: [
+          { title: section.title, type: 'sectionHeader', slug: section.slug },
+          ...section.items
+        ]
+      }
+    })
+  ];
+
+
+
+  const sectionItems = sections.reduce((acc, section) => {
+    return acc.concat(section.items);
+  }, []);
+
+  console.log(sectionItems);
+  console.log(sections);
 
 
   const handleScroll = (e) => {
     if (e.deltaY > 0) {
-      setCurrentItem(prevItem => (prevItem + 1) % sections.length);
+      setCurrentItem(prevItem => (prevItem + 1) % sectionItems.length);
     } else {
-      setCurrentItem(prevItem => (prevItem - 1 + sections.length) % sections.length);
+      setCurrentItem(prevItem => (prevItem - 1 + sectionItems.length) % sectionItems.length);
     }
   }
 
@@ -28,11 +53,10 @@ export const Catalog = (props) => {
   }, []);
 
   const scrollToItem = () => {
-    const item = document.getElementById(sections[currentItem].slug);
+    const item = document.getElementById(sectionItems[currentItem].slug);
     if (item) {
       item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
-
   }
 
   const prevItemRef = useRef(null);
@@ -54,18 +78,45 @@ export const Catalog = (props) => {
           <h1>Em's Exhibition</h1>
 
           <nav className={styles.catalogNav}>
-            <i>{sections[currentItem].title}</i>
+            <i>{sectionItems[currentItem].title}</i>
             <ul>
-              {sections.map((item, index) => {
+              {sections.map((section, sectionIndex) => {
                 return (
-                  <li key={index}>
-                    <button
-                      onClick={() => setCurrentItem(index)}
-                      className={currentItem === index ? styles.navButtonActive : ""}
-                    ></button>
+                  <li
+                    className={styles.sectionNav}
+                    key={sectionIndex}
+
+                  >
+                    {!section.items.includes(sectionItems[currentItem]) && (
+                      <button
+                        className={styles.sectionNavButton}
+                        onClick={() => setCurrentItem(sectionItems.findIndex(item => item.slug === section.items[0].slug))}
+                      ></button>
+                    )}
+
+                    <ul>
+                      {
+                        sectionItems.map((item, index) => {
+  
+                          if (section.items.includes(item)) {
+                            return (
+                              <li className={styles.itemNav} key={index}>
+                                <button
+                                  key={index}
+                                  onClick={() => setCurrentItem(sectionItems.findIndex(sectionItem => sectionItem.slug === item.slug))}
+                                  className={sectionItems[currentItem].slug === item.slug ? styles.navButtonActive : ""}
+                                ></button>
+                              </li>
+                            )
+                          }
+  
+                        })
+                      }
+                    </ul>
                   </li>
                 )
               })}
+
             </ul>
           </nav>
 
@@ -104,7 +155,7 @@ export const Catalog = (props) => {
                   </div>
                   <div className={styles.instruction}>
                     <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"><path d="M481.19-56.42q-127.73 0-215.65-87.23-87.93-87.23-87.93-215.16v-257.47q0-127.36 87.91-214.84 87.91-87.47 215.64-87.47 126.42 0 213.91 87.86 87.48 87.87 87.48 214.45v257.47q0 127.53-87.47 214.96T481.19-56.42Zm39.32-559.86h172.62q0-74.66-47.67-134.8-47.66-60.15-124.95-74.57v209.37Zm-253.64 0h173.47v-209.37q-77.28 14.42-125.38 74.57-48.09 60.14-48.09 134.8Zm213.75 470.6q88.2 0 150.35-62.34 62.16-62.34 62.16-150.79v-177.3H266.87v177.3q0 88.4 62.77 150.77 62.78 62.36 150.98 62.36ZM480-536.11Zm40.51-80.17Zm-80.17 0ZM480-536.11Z" /></svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" ><path d="m604.04-180.32-62.65-62.65L734.36-435.7H57.83v-89.26h676.53l-192.97-192.9 62.65-62.41L903.41-480 604.04-180.32Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" ><path d="m604.04-180.32-62.65-62.65L734.36-435.7H57.83v-89.26h676.53l-192.97-192.9 62.65-62.41L903.41-480 604.04-180.32Z" /></svg>
                   </div>
                   <footer className={styles.footer}>
                     <div>
@@ -123,28 +174,36 @@ export const Catalog = (props) => {
                     </div>
                   </footer>
                 </td>
-                {props.items.map(item => (
-                  <td key={item.slug} className={styles.gridCell + " " + (
-                    item.description ? styles.twoColumn : ''
-                  )}
-                    id={item.slug}
-                  >
-                    <figure>
-                      {item.image && <a href={item.image}><img src={item.image} alt={item.slug} /></a>}
-                      {item.imageCaption && <figcaption>{item.imageCaption}</figcaption>}
-                      <figcaption>
-                        <h2>{item.creator}</h2>
-                        {item.birthDeath && <span>{item.birthDeath}</span>}
-                        <span><b>{item.title}</b>{
-                          item.circa && <span>, c. {item.circa}</span>
-                        }</span>
-                        {item.tombstone && <span className={styles.tombstone}>{item.tombstone}</span>}
-                      </figcaption>
-                    </figure>
-                    {item.description && <div className={styles.description}>
-                      <p>{item.description}</p>
-                    </div>}
-                  </td>
+                {props.items.map(category => (
+                  <Fragment key={category.slug}>
+                    <td id={category.slug} className={styles.categoryTitle}>
+                      <h1>{category.title}</h1>
+                    </td>
+
+                    {category.items.map(item =>
+                      <td key={item.slug} className={styles.gridCell + " " + (
+                        item.description ? styles.twoColumn : ''
+                      )}
+                        id={item.slug}
+                      >
+                        <figure>
+                          {item.image && <a href={item.image}><img src={item.image} alt={item.slug} /></a>}
+                          {item.imageCaption && <figcaption>{item.imageCaption}</figcaption>}
+                          <figcaption>
+                            <h2>{item.creator}</h2>
+                            {item.birthDeath && <span>{item.birthDeath}</span>}
+                            <span><b>{item.title}</b>{
+                              item.circa && <span>, c. {item.circa}</span>
+                            }</span>
+                            {item.tombstone && <span className={styles.tombstone}>{item.tombstone}</span>}
+                          </figcaption>
+                        </figure>
+                        {item.description && <div className={styles.description}>
+                          <p>{item.description}</p>
+                        </div>}
+                      </td>
+                    )}
+                  </Fragment>
                 ))}
               </tr>
             </tbody>
