@@ -9,6 +9,10 @@
   scroll-snap-align: center;
 }
 
+.catalogNav {
+  margin: 1em 0;
+  padding: 0 1em;
+}
 
 
 .catalogNav .sectionNav:not(:has(.navButtonActive)) {
@@ -47,6 +51,7 @@
 
 .catalogNav ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 0;
@@ -196,6 +201,7 @@
 .header {
   display: flex;
   flex-direction: row-reverse;
+  flex-wrap: wrap;
   position: sticky;
   top: 0;
   background-color: var(--background-1);
