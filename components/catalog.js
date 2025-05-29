@@ -114,9 +114,9 @@ export const Catalog = (props) => {
         const containerWidth = scrollContainer.clientWidth;
         const targetOffsetLeft = nextElement.offsetLeft;
         const targetWidth = nextElement.offsetWidth;
-        
+
         const scrollToPosition = targetOffsetLeft - (containerWidth / 2) + (targetWidth / 2);
-        
+
         scrollContainer.scrollTo({
           left: scrollToPosition,
           behavior: 'smooth'
@@ -131,9 +131,9 @@ export const Catalog = (props) => {
         const containerWidth = scrollContainer.clientWidth;
         const targetOffsetLeft = previousElement.offsetLeft;
         const targetWidth = previousElement.offsetWidth;
-        
+
         const scrollToPosition = targetOffsetLeft - (containerWidth / 2) + (targetWidth / 2);
-        
+
         scrollContainer.scrollTo({
           left: scrollToPosition,
           behavior: 'smooth'
@@ -175,7 +175,7 @@ export const Catalog = (props) => {
     <>
       <div className={styles.catalog}>
         <header className={styles.header}>
-          <h1>Em's Exhibition</h1>
+          <h1>Les Petits Artistes</h1>
 
           <nav className={styles.catalogNav}>
             <i>{sectionItems[currentItem].title}</i>
@@ -194,7 +194,7 @@ export const Catalog = (props) => {
                           setCurrentItem(sectionItems.findIndex(item => item.slug === section.items[0].slug))
                           scrollToItem(section.items[0].slug);
                         }
-                          
+
                         }
                       ></button>
                     )}
@@ -231,7 +231,7 @@ export const Catalog = (props) => {
             </ul>
           </nav>
 
-          
+
 
 
 
@@ -243,13 +243,13 @@ export const Catalog = (props) => {
               <tr>
                 <td id="hero">
                   <div className={styles.hero} >
-                    <h1>Some big words</h1>
+                    <h1>So, so many cats</h1>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      Henriette Ronner-Knip’s painting “Les Petits Artistes,” translating to “The Little Artist” sets the tone for this selection of romantic and charming pieces. With curious and inquisitive paws, the kitten explores a glass of water- or perhaps mineral spirits- meant for cleaning paint brushes. Knip makes a playful and symbolic connection between the subject and the art itself, in a way not even all artists afford themselves or others in the world of portraiture and self-portraiture ...
+
                     </p>
                     <div className={styles.cta}>
-                      <button>See the Writing Assignment</button>
-                      <button>Another CTA</button>
+                      <a href="https://docs.google.com/document/d/1DecxZb6QqmjIm8tCvwUHMlN64ZendYRq4QcB7eKf-QY/edit?tab=t.0" target="_blank">See the Writing Assignment</a>
                     </div>
                   </div>
                   <div className={styles.instruction}>
@@ -290,9 +290,9 @@ export const Catalog = (props) => {
                         <figure>
                           {item.href && <a href={item.href}
                             target="_blank"><img
-                            src={item.href}
-                            alt={item.slug}
-                          /></a>}
+                              src={item.href}
+                              alt={item.slug}
+                            /></a>}
                           {item.imageCaption && <figcaption>{item.imageCaption}</figcaption>}
                           <figcaption>
                             <h2>{item.creator}</h2>

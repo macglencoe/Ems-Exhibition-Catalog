@@ -320,7 +320,7 @@
   flex-direction: row;
 }
 
-.hero .cta button {
+.hero .cta a {
   margin: 1em;
   padding: 1em;
   background-color: var(--foreground-2);
@@ -331,7 +331,7 @@
   cursor: pointer;
   transition: translate 0.2s ease-in-out;
 }
-.hero .cta button:nth-child(2) {
+.hero .cta a:nth-child(2) {
   background-color: var(--background-2);
   color: var(--foreground-1);
 }
