@@ -300,7 +300,9 @@ export const Catalog = (props) => {
                             <span><b>{item.title}</b>{
                               item.circa && <span>, c. {item.circa}</span>
                             }</span>
-                            {item.tombstone && <span className={styles.tombstone}>{item.tombstone}</span>}
+                            {item.medium && <span className={styles.tombstone}>{item.medium}</span>}
+                            {item.size && <span className={styles.tombstone}>{item.size}</span>}
+                            {item.currentLocation && <span className={styles.tombstone}>{item.currentLocation}</span>}
                           </figcaption>
                         </figure>
                         {item.details && <div className={styles.description}>
