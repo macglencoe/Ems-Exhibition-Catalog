@@ -7,6 +7,7 @@ import fs from 'fs';
 import path from 'path';
 import ScrollHandler from "@/components/scrollHandler";
 import Catalog from "@/components/catalog";
+import works from "../public/data/works.json";
 
 
 export default async function ExhibitionList() {
@@ -15,7 +16,7 @@ export default async function ExhibitionList() {
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name);
 
-  const items = itemFolders.map(folder => {
+  /* const items = itemFolders.map(folder => {
     const folderTitlePath = path.join(itemsDirectory, folder, 'title.txt');
     let folderTitle = '';
     if (fs.existsSync(folderTitlePath)) {
@@ -76,7 +77,10 @@ export default async function ExhibitionList() {
     });
 
     return { slug: folder, items, title: folderTitle };
-  });
+  });  */
+
+  const items = works;
+
 
   console.log(items);
 

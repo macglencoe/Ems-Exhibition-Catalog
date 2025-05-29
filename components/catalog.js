@@ -36,6 +36,8 @@ export const Catalog = (props) => {
     })
   ];
 
+  console.log(props.items)
+
 
 
   const sectionItems = sections.reduce((acc, section) => {
@@ -280,15 +282,15 @@ export const Catalog = (props) => {
                     </td>
 
                     {category.items.map(item =>
-                      <td key={item.slug} className={styles.gridCell + " " + (
-                        item.description ? styles.twoColumn : ''
+                      <td key={item.href} className={styles.gridCell + " " + (
+                        item.details ? styles.twoColumn : ''
                       )}
                         id={item.slug}
                       >
                         <figure>
-                          {item.image && <a href={item.image}
+                          {item.href && <a href={item.href}
                             target="_blank"><img
-                            src={item.image}
+                            src={item.href}
                             alt={item.slug}
                           /></a>}
                           {item.imageCaption && <figcaption>{item.imageCaption}</figcaption>}
@@ -301,8 +303,8 @@ export const Catalog = (props) => {
                             {item.tombstone && <span className={styles.tombstone}>{item.tombstone}</span>}
                           </figcaption>
                         </figure>
-                        {item.description && <div className={styles.description}>
-                          <p>{item.description}</p>
+                        {item.details && <div className={styles.description}>
+                          <p>{item.details}</p>
                         </div>}
                       </td>
                     )}

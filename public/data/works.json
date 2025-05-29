@@ -1,0 +1,542 @@
+[
+    {
+      "slug": "in-house",
+      "title": "In House",
+      "items": [
+        {
+          "href": "/image003.png",
+          "creator": "Donald Coale",
+          "title": "Portrait, Mrs. Brundage",
+          "circa": "1947",
+          "medium": "Painting (unspecified)",
+          "currentLocation": "Property of WCMFA - Maryland",
+          "size": "Size unspecified",
+          "details": null,
+          "slug": "portrait-mrs-brundage"
+        },
+        {
+          "href": "/image005.png",
+          "creator": "Adolphe Joseph Thomas Monticelli",
+          "title": "Garden Scene",
+          "circa": "Year unknown",
+          "medium": "Painting (unspecified)",
+          "currentLocation": "Property of WCMFA - Maryland",
+          "size": "Size unspecified",
+          "details": null,
+          "slug": "garden-scene"
+        },
+        {
+          "href": "/image007.png",
+          "creator": "Gaylord Sangston Truesdell",
+          "title": "Hurrying Home",
+          "circa": "1893",
+          "medium": "Painting (unspecified)",
+          "currentLocation": "Property of WCMFA - Maryland",
+          "size": "Size Unspecified",
+          "details": null,
+          "slug": "hurrying-home"
+        },
+        {
+          "href": "/image009.png",
+          "creator": "Peter Moran",
+          "title": "A New England Orchard",
+          "circa": "c. 1887",
+          "medium": "Painting (unspecified)",
+          "currentLocation": null,
+          "size": "Size Unspecified",
+          "details": null,
+          "slug": "a-new-england-orchard"
+        },
+        {
+          "href": "/image011.png",
+          "creator": "Herman Maril",
+          "title": "Still Life With Cat",
+          "circa": "1960",
+          "medium": "Painting (unspecified)",
+          "currentLocation": "Property of WCMFA - Maryland",
+          "size": "Size unspecified",
+          "details": null,
+          "slug": "still-life-with-cat"
+        }
+      ]
+    },
+    {
+      "slug": "loan",
+      "title": "Loan",
+      "items": [
+        {
+          "href": "/image013.png",
+          "creator": "František Z. Eberl",
+          "title": "Woman with a Cat",
+          "circa": "c. 1929",
+          "medium": "Oil on canvas",
+          "currentLocation": "Property of Fair Trade Palace- Prague",
+          "size": "55x46cm",
+          "details": null,
+          "slug": "woman-with-a-cat"
+        },
+        {
+          "href": "/image015.png",
+          "creator": "Berthe Morisot",
+          "title": "La jeune fille au chat",
+          "circa": "1892",
+          "medium": null,
+          "currentLocation": "Exhibited most often in Paris, most recently in Lodève in 2006",
+          "size": "55.5x 46.6cm",
+          "details": null,
+          "slug": "la-jeune-fille-au-chat"
+        },
+        {
+          "href": "/image017.png",
+          "creator": "Francesco Bacchiacca",
+          "title": "Portrait of a Young Lady Holding Cat",
+          "circa": "c. 1525-30",
+          "medium": null,
+          "currentLocation": "Property of Private Collection",
+          "size": "53.6x43.8cm",
+          "details": null,
+          "slug": "portrait-of-a-young-lady-holding-cat"
+        },
+        {
+          "href": "/image019.png",
+          "creator": "Cecilia Beaux",
+          "title": "Sita and Sarita",
+          "circa": "c. 1921",
+          "medium": "oil on canvas",
+          "currentLocation": "Property of National Gallery of Art - Washington DC",
+          "size": "113.3x83.8cm",
+          "details": null,
+          "slug": "sita-and-sarita"
+        },
+        {
+          "href": "/image020.png",
+          "creator": "Nikolai Yaroshenko",
+          "title": "Portrait of a Lady With Cat",
+          "circa": "c. 1890",
+          "medium": "Oil on Canvas",
+          "currentLocation": "Property of Kaluga Museum of Fine Arts - Kaluga",
+          "size": "89x71cm",
+          "details": null,
+          "slug": "portrait-of-a-lady-with-cat"
+        },
+        {
+          "href": "/image023.png",
+          "creator": "Eduard Manet",
+          "title": "Woman With a Cat",
+          "circa": "c. 1880-82",
+          "medium": "Oil on Canvas",
+          "currentLocation": "Property of National Gallery - London",
+          "size": "92.1x73cm",
+          "details": null,
+          "slug": "woman-with-a-cat-2"
+        },
+        {
+          "href": "/image025.png",
+          "creator": "Adolphe Joseph Thomas Monticelli",
+          "title": "Garden Scene",
+          "circa": "c. 1875-78",
+          "medium": "Oil on panel",
+          "currentLocation": "Property of Yale University Art Gallery - Connecticut PAIR",
+          "size": "39.4x61.9cm",
+          "details": null,
+          "slug": "garden-scene-2"
+        },
+        {
+          "href": "/image026.png",
+          "creator": "Philip Eustace Stretton",
+          "title": "The Hearth",
+          "circa": "1894",
+          "medium": "Oil on Canvas",
+          "currentLocation": "Property of Private Collection",
+          "size": "50.8x40.64cm",
+          "details": null,
+          "slug": "the-hearth"
+        },
+        {
+          "href": "/image029.png",
+          "creator": "Herman Maril",
+          "title": "Tranquil",
+          "circa": "1977",
+          "medium": "Painting (unspecified)",
+          "currentLocation": "Property of Collection of the Federal Reserve - Washington DC PAIR",
+          "size": "152.4x202.6cm",
+          "details": "The inclusion of cats in a \"still life\" brings compelling contrast between stasis and movement. We expect our still life’s to be, well, still, however what happens when we bend the rules? When we include an animal who stretches, who chases a ball, or who simply breathes in the quiet of these otherwise stationary scenes? Do we consider this an offense to the composition, or perhaps an innovative boost of personality to it?",
+          "slug": "tranquil"
+        },
+        {
+          "href": "/image031.png",
+          "creator": "František Z. Eberl",
+          "title": "Still Life With Cat",
+          "circa": "1924",
+          "medium": "Oil on Canvas",
+          "currentLocation": "Property of Private Collection",
+          "size": "50x61cm",
+          "details": null,
+          "slug": "still-life-with-cat-2"
+        },
+        {
+          "href": "/image033.png",
+          "creator": "František Z. Eberl",
+          "title": "Legs & Cats",
+          "circa": "1924-25",
+          "medium": "Oil on Canvas",
+          "currentLocation": null,
+          "size": "50x61cm",
+          "details": null,
+          "slug": "legs-cats"
+        },
+        {
+          "href": "/image035.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "The Vegetable Cart",
+          "circa": null,
+          "medium": "Oil on Canvas",
+          "currentLocation": "Property of Private Collection",
+          "size": "35.5x50.5cm",
+          "details": null,
+          "slug": "the-vegetable-cart"
+        },
+        {
+          "href": "/image037.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "*Katt med sina ungar*",
+          "circa": null,
+          "medium": "Oil on Panel",
+          "currentLocation": "Property of Private Collection",
+          "size": "55x68cm",
+          "details": null,
+          "slug": "katt-med-sina-ungar"
+        },
+        {
+          "href": "/image039.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "The Piano Lesson",
+          "circa": "1897",
+          "medium": "Oil on Panel",
+          "currentLocation": "Property of Teylers Museum - Netherlands",
+          "size": "33x44cm",
+          "details": null,
+          "slug": "the-piano-lesson"
+        },
+        {
+          "href": "/image041.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "St. Nicholas",
+          "circa": "1873",
+          "medium": "Illustration from Children's Book",
+          "currentLocation": null,
+          "size": null,
+          "details": null,
+          "slug": "st-nicholas"
+        },
+        {
+          "href": "/image043.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "Le Chat",
+          "circa": null,
+          "medium": "Oil on Panel",
+          "currentLocation": "Property of Private Collection",
+          "size": "49.5x42.3cm",
+          "details": null,
+          "slug": "le-chat"
+        },
+        {
+          "href": "/image045.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "Sleepy Kittens",
+          "circa": "1894",
+          "medium": "Oil on Panel",
+          "currentLocation": null,
+          "size": "45.7x55.9 cm",
+          "details": null,
+          "slug": "sleepy-kittens"
+        },
+        {
+          "href": "/image047.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "A Kitten on a Blue Striped Pillow",
+          "circa": null,
+          "medium": "Oil on Panel",
+          "currentLocation": "Property of Private Collection",
+          "size": "20x16cm",
+          "details": null,
+          "slug": "a-kitten-on-a-blue-striped-pillow"
+        },
+        {
+          "href": "/image049.png",
+          "creator": "František Z. Eberl",
+          "title": "Still Life With Cat",
+          "circa": "1924",
+          "medium": "Oil on Canvas",
+          "currentLocation": "Property of Private Collection - Berlin",
+          "size": "65x54cm",
+          "details": null,
+          "slug": "still-life-with-cat-3"
+        },
+        {
+          "href": "/image051.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "Le Trio",
+          "circa": "1896",
+          "medium": "Watercolor on Paper",
+          "currentLocation": null,
+          "size": "21x31.5cm",
+          "details": null,
+          "slug": "le-trio"
+        },
+        {
+          "href": "/image053.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "Le Petite Artiste",
+          "circa": null,
+          "medium": "Oil on Paper",
+          "currentLocation": "Property of Private Collection",
+          "size": "20x16cm",
+          "details": null,
+          "slug": "le-petite-artiste"
+        },
+        {
+          "href": "/image055.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "A mother cat with kittens playing on an armchair",
+          "circa": "1897",
+          "medium": "Oil on Paper",
+          "currentLocation": "Property of Private Collection",
+          "size": null,
+          "details": null,
+          "slug": "a-mother-cat-with-kittens-playing-on-an-armchair"
+        },
+        {
+          "href": "/image057.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "Chat Duchesse",
+          "circa": "1894",
+          "medium": "Oil on Panel",
+          "currentLocation": "Property of Private Collection",
+          "size": "22.5x19cm",
+          "details": null,
+          "slug": "chat-duchesse"
+        },
+        {
+          "href": "/image059.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "The Young Artist",
+          "circa": null,
+          "medium": "Oil on Panel",
+          "currentLocation": "Property of Private Collection",
+          "size": "24x32cm",
+          "details": "Exhibition History: Amsterdam, Kattenkabinet, Salonkatjes en Pronkpoezen van Henriette Ronner-Knip, 1991-92 Rotterdam, Kunsthal, Tentoonstelling Henriette Ronner-Knip, 1998",
+          "slug": "the-young-artist"
+        },
+        {
+          "href": "/image061.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "The Maine Coon",
+          "circa": "1894",
+          "medium": "Oil on Panel",
+          "currentLocation": null,
+          "size": "40.5x32cm",
+          "details": null,
+          "slug": "the-maine-coon"
+        },
+        {
+          "href": "/image063.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "Three Sheepdog Puppies",
+          "circa": null,
+          "medium": null,
+          "currentLocation": null,
+          "size": "48.3x61cm",
+          "details": null,
+          "slug": "three-sheepdog-puppies"
+        },
+        {
+          "href": "/image070.png",
+          "creator": "Berthe Morisot",
+          "title": "Laerte the Greyhound",
+          "circa": "1894",
+          "medium": "Oil on Canvas",
+          "currentLocation": "Property of Private Collection",
+          "size": "80x100cm",
+          "details": null,
+          "slug": "laerte-the-greyhound"
+        },
+        {
+          "href": "/image071.png",
+          "creator": "Berthe Morisot",
+          "title": "In a Park",
+          "circa": "1874",
+          "medium": "Pastel",
+          "currentLocation": "Property of Petit Palais - Paris",
+          "size": "71x89cm",
+          "details": null,
+          "slug": "in-a-park"
+        },
+        {
+          "href": "/image072.png",
+          "creator": "Berthe Morisot",
+          "title": "The Goose",
+          "circa": "1885",
+          "medium": "Oil on Canvas",
+          "currentLocation": "Property of Private Collection",
+          "size": null,
+          "details": "While not a “pet,” or “working animal,” Morisot’s The Goose emanates a warm and comforting domesticity found often in her Impressionist works.",
+          "slug": "the-goose"
+        },
+        {
+          "href": "/image073.png",
+          "creator": "Berthe Morisot",
+          "title": "Girl in a Boat With Geese",
+          "circa": "1889",
+          "medium": "Oil on Canvas",
+          "currentLocation": null,
+          "size": "65.4x54.6cm",
+          "details": null,
+          "slug": "girl-in-a-boat-with-geese"
+        },
+        {
+          "href": "/image074.png",
+          "creator": "Berthe Morisot",
+          "title": "Julie Manet and her greyhound Laërte",
+          "circa": "1893",
+          "medium": "Oil on Canvas",
+          "currentLocation": null,
+          "size": "73x80cm",
+          "details": null,
+          "slug": "julie-manet-and-her-greyhound-laërte"
+        },
+        {
+          "href": "/image075.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "The Kittens Art Lesson",
+          "circa": null,
+          "medium": "Oil on Panel",
+          "currentLocation": "Property of Private Collection - Previously owned by Estate of Lucy Smiley, Florida",
+          "size": "25.4x38.7cm",
+          "details": null,
+          "slug": "the-kittens-art-lesson"
+        },
+        {
+          "href": "/image077.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "Two Cats on a Cushion",
+          "circa": null,
+          "medium": "Oil on Panel",
+          "currentLocation": "Property of Private Collection",
+          "size": "45.8x56cm",
+          "details": null,
+          "slug": "two-cats-on-a-cushion"
+        },
+        {
+          "href": "/image079.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "Two Resting Cats",
+          "circa": "1893",
+          "medium": "Oil on Panel",
+          "currentLocation": null,
+          "size": "35x45cm",
+          "details": null,
+          "slug": "two-resting-cats"
+        },
+        {
+          "href": "/image081.png",
+          "creator": "Henriette Ronner-Knip",
+          "title": "Tea Time",
+          "circa": "1905",
+          "medium": "Oil on Panel",
+          "currentLocation": null,
+          "size": "24x32cm",
+          "details": null,
+          "slug": "tea-time"
+        },
+        {
+          "href": "/image083.png",
+          "creator": "Philip Eustace Stretton",
+          "title": "After a Long Walk",
+          "circa": null,
+          "medium": "Oil on Panel",
+          "currentLocation": null,
+          "size": "23.5 x 40.3 cm",
+          "details": null,
+          "slug": "after-a-long-walk"
+        },
+        {
+          "href": "/image084.png",
+          "creator": "Philip Eustace Stretton",
+          "title": "A Well Earned Rest",
+          "circa": null,
+          "medium": "Oil on Canvas",
+          "currentLocation": "Property of Private Collection",
+          "size": null,
+          "details": null,
+          "slug": "a-well-earned-rest"
+        },
+        {
+          "href": "/image085.png",
+          "creator": "Philip Eustace Stretton",
+          "title": "Left in Charge",
+          "circa": null,
+          "medium": null,
+          "currentLocation": "Property of Private Collection",
+          "size": null,
+          "details": null,
+          "slug": "left-in-charge"
+        },
+        {
+          "href": "/image089.png",
+          "creator": "Philip Eustace Stretton",
+          "title": "Two Borzois in an Interior sitting on a Bearskin Rug",
+          "circa": "1910",
+          "medium": "Oil on Canvas",
+          "currentLocation": "Property of Private Collection",
+          "size": "55.9x73.6cm",
+          "details": null,
+          "slug": "two-borzois-in-an-interior-sitting-on-a-bearskin-rug"
+        },
+        {
+          "href": "/image091.png",
+          "creator": "Philip Eustace Stretton",
+          "title": "Stable Companions",
+          "circa": "1901",
+          "medium": "Oil on canvas",
+          "currentLocation": "Property of Private Collection",
+          "size": "77x64cm",
+          "details": null,
+          "slug": "stable-companions"
+        },
+        {
+          "href": "/image093.png",
+          "creator": "Philip Eustace Stretton",
+          "title": "Study of a Ginger Cat",
+          "circa": "1908",
+          "medium": "Oil on Canvas",
+          "currentLocation": "Property of Private Collection",
+          "size": "61x55.9cm",
+          "details": null,
+          "slug": "study-of-a-ginger-cat"
+        },
+        {
+          "href": "/image095.png",
+          "creator": "Philip Eustace Stretton",
+          "title": "Patience",
+          "circa": "1889",
+          "medium": "Oil on Canvas",
+          "currentLocation": "Property of Private Collection",
+          "size": "30x30cm",
+          "details": null,
+          "slug": "patience"
+        },
+        {
+          "href": "/image097.png",
+          "creator": "Gerard Horenbout",
+          "title": "Illustration from the Hours of Joanna I of Castile",
+          "circa": "c. 1500",
+          "medium": "Illustration",
+          "currentLocation": null,
+          "size": null,
+          "details": null,
+          "slug": "illustration-from-the-hours-of-joanna-i-of-castile"
+        }
+      ]
+    }
+  ]
